@@ -9,11 +9,13 @@ const assertEqual = function(actual, expected) {
 };
 
 const eqArrays = function(firstArray, secondArray) {
+  let checker;
   for (let i = 0; i < firstArray.length; i++) {
     if (firstArray[i] === secondArray[i]) {
-      return true;
+      checker = true;
     } else return false;
   }
+  return checker;
 };
 
 
@@ -21,9 +23,9 @@ const assertArrayEqual = function(arrayOne, arrayTwo) {
   
   let same = eqArrays(arrayOne, arrayTwo);
   if (same) {
-    console.log(`${checkEmoji}${checkEmoji} These two arrays, ${arrayOne} and ${arrayTwo} are the same.`)
+    console.log(`${checkEmoji}${checkEmoji} These two arrays, ${arrayOne} and ${arrayTwo} are the same.`);
   } else {
-    console.log(`${exEmoji}${exEmoji} This first array ${arrayOne} is not the same as the second array ${arrayTwo}.`)
+    console.log(`${exEmoji}${exEmoji} This first array ${arrayOne} is not the same as the second array ${arrayTwo}.`);
   }
 };
 
