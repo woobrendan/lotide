@@ -34,7 +34,6 @@ const isEven = function(someArray) {
 const middle = function(someArray) {
   let arrayLength = someArray.length;
   let middleIndex = [];
-
   if (arrayLength < 3) {
     return [];
   } else if (isOdd(someArray)) {
