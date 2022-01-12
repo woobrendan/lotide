@@ -10,11 +10,13 @@ const assertArraysEqual = function(arrayOne, arrayTwo) {
 };
 
 const eqArrays = function(firstArray, secondArray) {
+  let checker;
   for (let i = 0; i < firstArray.length; i++) {
     if (firstArray[i] === secondArray[i]) {
-      return true;
+      checker = true;
     } else return false;
   }
+  return checker;
 };
 const letterPositions = function(sentence) {
   const results = {};
