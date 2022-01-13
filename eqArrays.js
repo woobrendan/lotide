@@ -10,19 +10,25 @@ const assertEqual = function(actual, expected) {
 
 const eqArrays = function(firstArray, secondArray) {
   let checker;
-  for (let i = 0; i < firstArray.length; i++) {
+  let masterArray = [firstArray, secondArray]
+  let longestArrayLength = firstArray.length;
+  for (let array of masterArray) {
+    if (array.length > longestArrayLength) {
+      longestArrayLength = array.length;
+    } 
+  }
+  for (let i = 0; i < longestArrayLength; i++) {
     if (firstArray[i] === secondArray[i]) {
       checker = true;
     } else return false;
   }
   return checker;
 };
-
-
-assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);
-assertEqual(eqArrays([1, 2, 3], [3, 2, 1]), true);
-assertEqual(eqArrays([1, 2, 3], [3, 2, 1]), false);
-assertEqual(eqArrays([10, 21, 33], [10, 21, 33]), false);
+console.log(eqArrays([10, 21, 33], [10, 21, 33, 42]))
+// assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);
+// assertEqual(eqArrays([1, 2, 3], [3, 2, 1]), true);
+// assertEqual(eqArrays([1, 2, 3], [3, 2, 1]), false);
+// assertEqual(eqArrays([10, 21, 33], [10, 21, 33]), false);
 
 // assertEqual("Lighthouse Labs", "Bootcamp");
 // assertEqual(1, 1);
