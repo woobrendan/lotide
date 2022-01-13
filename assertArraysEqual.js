@@ -10,7 +10,14 @@ const assertEqual = function(actual, expected) {
 
 const eqArrays = function(firstArray, secondArray) {
   let checker;
-  for (let i = 0; i < firstArray.length; i++) {
+  let masterArray = [firstArray, secondArray]
+  let longestArrayLength = firstArray.length;
+  for (let array of masterArray) {
+    if (array.length > longestArrayLength) {
+      longestArrayLength = array.length;
+    } 
+  }
+  for (let i = 0; i < longestArrayLength; i++) {
     if (firstArray[i] === secondArray[i]) {
       checker = true;
     } else return false;
