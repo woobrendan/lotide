@@ -3,6 +3,9 @@ const eqArrays = (firstArray, secondArray) => {
   if (firstArray.length !== secondArray.length) {
     return false;
   }
+  if (firstArray.length === 0) {
+    return true;
+  }
   for (let i = 0; i < firstArray.length; i++) {
     if (firstArray[i] === secondArray[i]) {
       checker = true;
@@ -12,6 +15,8 @@ const eqArrays = (firstArray, secondArray) => {
 };
 
 module.exports = eqArrays;
+
+console.log(eqArrays([], []))
 
 
 
