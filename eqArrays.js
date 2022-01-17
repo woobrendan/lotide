@@ -1,38 +1,17 @@
-const exEmoji = String.fromCodePoint(0x274C);
-const checkEmoji = String.fromCodePoint(0x2705);
-const assertEqual = function(actual, expected) {
-  if (expected === actual) {
-    console.log(`${checkEmoji}${checkEmoji} Assertaion Passes: ${actual} === ${expected}`);
-  } else {
-    console.log(`${exEmoji}${exEmoji} Assertaion Failed: ${actual} !== ${expected}`);
-  }
-};
-
-const eqArrays = function(firstArray, secondArray) {
+const eqArrays = (firstArray, secondArray) => {
   let checker;
-  let masterArray = [firstArray, secondArray]
-  let longestArrayLength = firstArray.length;
-  for (let array of masterArray) {
-    if (array.length > longestArrayLength) {
-      longestArrayLength = array.length;
-    } 
+  if (firstArray.length !== secondArray.length) {
+    return false;
   }
-  for (let i = 0; i < longestArrayLength; i++) {
+  for (let i = 0; i < firstArray.length; i++) {
     if (firstArray[i] === secondArray[i]) {
       checker = true;
     } else return false;
   }
   return checker;
 };
-console.log(eqArrays([10, 21, 33], [10, 21, 33, 42]))
-// assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);
-// assertEqual(eqArrays([1, 2, 3], [3, 2, 1]), true);
-// assertEqual(eqArrays([1, 2, 3], [3, 2, 1]), false);
-// assertEqual(eqArrays([10, 21, 33], [10, 21, 33]), false);
 
-// assertEqual("Lighthouse Labs", "Bootcamp");
-// assertEqual(1, 1);
-// assertEqual("hello", "hello");
-// assertEqual("Hello", "hello");
-// assertEqual(1, 5);
-// assertEqual(55, 55);
+module.exports = eqArrays;
+
+
+
