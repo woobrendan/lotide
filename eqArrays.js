@@ -16,7 +16,6 @@ const eqArrays = (firstArray, secondArray) => {
 
 module.exports = eqArrays;
 
-console.log(eqArrays([], []))
 
 
 
