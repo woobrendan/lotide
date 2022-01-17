@@ -9,5 +9,5 @@ const tail = (array) => {
 
 module.exports = tail;
 
-console.log(tail([]));
+
 
