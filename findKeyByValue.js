@@ -2,15 +2,15 @@
 
 
 const findKeyByValue = function(someObject, someValue) {
-  let genreOfShow = '';
-  for (let genre in someObject) {
-    if (someValue === someObject[genre]) {
-      genreOfShow = genre;
+  let result = '';
+  for (let key in someObject) {
+    if (someValue === someObject[key]) {
+      result = key;
     } else {
-      genreOfShow = undefined;
+      result = undefined;
     }
   }
-  return genreOfShow;
+  return result;
 };
 module.exports = findKeyByValue;
 
