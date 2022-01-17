@@ -1,19 +1,16 @@
-
-
-const flatten = function(someArray) {
-  let cleanArray = [];
-  for (let i = 0; i < someArray.length; i++) {
-    if (!Array.isArray(someArray[i])) {
-      cleanArray.push(someArray[i]);
+const flatten = function(array) {
+  let newArray = [];
+  array.forEach((item) => {
+    if (Array.isArray(item)) {
+       newArray = newArray.concat(flatten(item));
     } else {
-        for (let j = 0; j < someArray[i].length; j++) {
-          cleanArray.push(someArray[i][j]);
-      }
+      newArray.push(item);
     }
-  }
-  return cleanArray;
-}
+  });
+  return newArray;
+};
 
 module.exports = flatten;
+
 // console.log(flatten([1, 2, [3, 4], 5, [6]]));
 // console.log(flatten([1, 2, [3, 4], 5, [6, 7, 8], 9, [10, 11, 12, 13]]));
