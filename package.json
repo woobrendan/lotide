@@ -1,6 +1,6 @@
 {
   "name": "@woobrendan/lotide",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Shallow copy of Lodash library used for learning purposes. Uses Mocha and Chai for asserting comparisons",
   "main": "assertArraysEqual.js",
   "directories": {
