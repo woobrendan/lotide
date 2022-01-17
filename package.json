@@ -1,7 +1,7 @@
 {
-  "name": "lotide",
+  "name": "@woobrendan/lotide",
   "version": "1.0.0",
-  "description": "",
+  "description": "Shallow copy of Lodash library used for learning purposes. Uses Mocha and Chai for asserting comparisons",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/wootang9/lotide.git"
   },
-  "author": "",
+  "author": {"name": "Brendan Woo", "email": "woo.brendan@gmail.com"},
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/wootang9/lotide/issues"
